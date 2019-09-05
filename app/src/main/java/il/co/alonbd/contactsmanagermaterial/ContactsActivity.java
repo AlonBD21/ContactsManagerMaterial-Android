@@ -40,7 +40,7 @@ public class ContactsActivity extends AppCompatActivity implements NavigationVie
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        
+
         return false;
     }
 }
