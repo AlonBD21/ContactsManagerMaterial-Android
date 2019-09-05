@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class DataManager {
     private static DataManager instance;
@@ -41,8 +42,8 @@ public class DataManager {
         }
         if (data.size() == 0) {
             Contact example = new Contact();
-            example.setName(context.getResources().getString(R.string.example_name));
-            example.setPhone(context.getResources().getString(R.string.example_discription));
+            example.setName("Israel");
+            example.setPhone("Israeli");
             data.add(example);
             saveData();
         }
@@ -121,5 +122,20 @@ public class DataManager {
         loadData();
         data.remove(index);
         saveData();
+    }
+
+    public class AlphabetComparator implements Comparator<Contact> {
+        boolean asc;
+        public AlphabetComparator(boolean asc){
+            this.asc = asc;
+        }
+        @Override
+        public int compare(Contact o1, Contact o2) {
+            int stringcompare = o1.getName().compareTo(o2.getName());
+            if (asc = true){
+                return  stringcompare;
+            }
+            else return stringcompare*-1;
+        }
     }
 }

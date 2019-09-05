@@ -2,34 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/opt_add"
+        android:id="@+id/menu_add"
         android:icon="@android:drawable/ic_menu_add"
         android:title="Add Contact"/>
-
-    <item android:title="Sort By"
-        android:icon="@drawable/baseline_sort">
+    <item android:title=" Sort Order">
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/opt_name"
-                    android:title="Name"
-                    android:icon="@android:drawable/ic_menu_sort_alphabetically"/>
-                <item
-                    android:id="@+id/opt_date"
-                    android:title="Date Added"
-                    android:icon="@android:drawable/ic_menu_my_calendar"/>
-            </group>
-        </menu>
-    </item>
-    <item android:title="Order">
-        <menu>
-            <group android:checkableBehavior="single">
-                <item
-                    android:id="@+id/opt_asc"
+                    android:id="@+id/order_asc"
                     android:title="Ascending"
                     android:icon="@android:drawable/arrow_up_float"/>
                 <item
-                    android:id="@+id/opt_des"
+                    android:id="@+id/order_des"
                     android:title="Descending"
                     android:icon="@android:drawable/arrow_down_float"/>
             </group>

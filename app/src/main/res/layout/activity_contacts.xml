@@ -6,9 +6,10 @@
     android:layout_height="match_parent"
     android:id="@+id/drawer_root">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".ContactsActivity">
 
         <android.support.v7.widget.Toolbar
@@ -17,7 +18,15 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             android:theme="@style/ThemeOverlay.AppCompat.Dark" />
-    </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycler"
+            android:padding="4dp">
+
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
 
     <android.support.design.widget.NavigationView
         android:layout_width="wrap_content"

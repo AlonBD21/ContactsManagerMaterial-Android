@@ -12,25 +12,16 @@ public class Contact implements Serializable, Comparable<Contact> {
     private String name;
     private String phone;
     private String mail;
-    private String address;
-    private String website;
-    private String date;
-    private String time;
-    boolean hasImage = false;
     private transient Bitmap pic;
 
     public Contact(
     ) {
     }
 
-    public Contact(String name, String phone, String mail, String address, String website, String date, String time, Bitmap pic) {
+    public Contact(String name, String phone, String mail, Bitmap pic) {
         this.name = name;
         this.phone = phone;
         this.mail = mail;
-        this.address = address;
-        this.website = website;
-        this.date = date;
-        this.time = time;
         this.pic = pic;
     }
 
@@ -62,39 +53,6 @@ public class Contact implements Serializable, Comparable<Contact> {
     public void setMail(String mail) {
         this.mail = mail;
     }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getWebsite() {
-        return website;
-    }
-
-    public void setWebsite(String website) {
-        this.website = website;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
 
     public Bitmap getPic() {
         return pic;
