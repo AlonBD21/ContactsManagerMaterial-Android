@@ -131,6 +131,7 @@ public class ContactsActivity extends AppCompatActivity implements NavigationVie
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         if (item.getItemId() == android.R.id.home) {
             rootDrawer.openDrawer(Gravity.START);
         }
