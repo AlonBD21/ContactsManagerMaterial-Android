@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.Comparator;
 import java.util.Date;
 
-public class Contact implements Serializable, Comparable<Contact> {
+public class Contact implements Serializable {
     private String name;
     private String phone;
     private String mail;
@@ -25,10 +25,6 @@ public class Contact implements Serializable, Comparable<Contact> {
         this.pic = pic;
     }
 
-    @Override
-    public int compareTo(Contact o) {
-        return this.getName().compareTo(o.getName());
-    }
 
     public String getName() {
         return name;
@@ -74,4 +70,18 @@ public class Contact implements Serializable, Comparable<Contact> {
             pic = BitmapFactory.decodeStream(in);
     }
 
+    public static class AlphabetComparator implements Comparator<Contact> {
+        boolean asc;
+        public AlphabetComparator(boolean asc){
+            this.asc = asc;
+        }
+        @Override
+        public int compare(Contact o1, Contact o2) {
+            int stringCompare = o1.getName().toUpperCase().compareTo(o2.getName().toUpperCase());
+            if (asc){
+                return  stringCompare;
+            }
+            return stringCompare*(-1);
+        }
+    }
 }

@@ -11,11 +11,13 @@
                 <item
                     android:id="@+id/order_asc"
                     android:title="Ascending"
-                    android:icon="@android:drawable/arrow_up_float"/>
+                    android:checkable="true"
+                    android:icon="@drawable/sort_asc"/>
                 <item
                     android:id="@+id/order_des"
                     android:title="Descending"
-                    android:icon="@android:drawable/arrow_down_float"/>
+                    android:checkable="true"
+                    android:icon="@drawable/sort_desc"/>
             </group>
         </menu>
     </item>

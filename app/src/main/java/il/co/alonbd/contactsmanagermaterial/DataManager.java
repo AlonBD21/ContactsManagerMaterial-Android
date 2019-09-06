@@ -18,11 +18,17 @@ public class DataManager {
     private static DataManager instance;
     private final static Object SYNCHRO = new Object();
     private final static String FILE = "ContactsArrayList2";
+    private boolean orderAsc;
+
+    public boolean getOrderAsc() {
+        return orderAsc;
+    }
 
     private Context context;
     private ArrayList<Contact> data;
 
     private DataManager(Context context) {
+        orderAsc = true;
         this.context = context;
         data = new ArrayList<>();
 
@@ -42,8 +48,8 @@ public class DataManager {
         }
         if (data.size() == 0) {
             Contact example = new Contact();
-            example.setName("Israel");
-            example.setPhone("Israeli");
+            example.setName("Travis Scott");
+            example.setPhone("Tap to view, Hold to edit, Swipe to delete");
             data.add(example);
             saveData();
         }
@@ -51,7 +57,7 @@ public class DataManager {
 
     private void saveData() {
         synchronized (SYNCHRO) {
-            Collections.sort(data);
+            sort(orderAsc);
             try {
                 FileOutputStream fos = context.openFileOutput(FILE, Context.MODE_PRIVATE);
                 ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -77,7 +83,7 @@ public class DataManager {
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
-            Collections.sort(data);
+            sort(orderAsc);
         }
     }
 
@@ -123,19 +129,8 @@ public class DataManager {
         data.remove(index);
         saveData();
     }
-
-    public class AlphabetComparator implements Comparator<Contact> {
-        boolean asc;
-        public AlphabetComparator(boolean asc){
-            this.asc = asc;
-        }
-        @Override
-        public int compare(Contact o1, Contact o2) {
-            int stringcompare = o1.getName().compareTo(o2.getName());
-            if (asc = true){
-                return  stringcompare;
-            }
-            else return stringcompare*-1;
-        }
+    public void sort(boolean asc){
+        orderAsc = asc;
+        Collections.sort(data, new Contact.AlphabetComparator(orderAsc));
     }
 }

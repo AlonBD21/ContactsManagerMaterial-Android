@@ -21,39 +21,34 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/baseline_person_outline_black_48dp" />
 
+            <TextView
+                android:layout_marginTop="5dp"
+                android:id="@+id/name_tv"
+                android:text="Full Name"
+                style="@style/LabelTextView" />
 
             <TextView
                 android:id="@+id/name_et"
                 style="@style/DataText"
-                android:layout_below="@id/name_tv"
-                android:inputType="textPersonName"
-                android:textSize="36dp"
                 android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/phone_tv"
                 style="@style/LabelTextView"
-                android:layout_below="@id/name_et"
-
-                android:text="PHONE" />
+                android:text="Phone Number" />
 
             <TextView
                 android:id="@+id/phone_et"
-                style="@style/DataText"
-                android:layout_below="@id/phone_tv"
-                android:inputType="phone" />
+                style="@style/DataText" />
 
             <TextView
                 android:id="@+id/mail_tv"
                 style="@style/LabelTextView"
-                android:layout_marginTop="10dp"
-                android:text="EMAIL" />
+                android:text="E-Mail Address" />
 
             <TextView
                 android:id="@+id/mail_et"
-                style="@style/DataText"
-                android:layout_below="@id/mail_tv"
-                android:inputType="textEmailAddress" />
+                style="@style/DataText" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
